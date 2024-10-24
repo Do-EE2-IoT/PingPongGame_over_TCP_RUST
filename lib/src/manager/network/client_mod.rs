@@ -5,8 +5,14 @@ pub mod client{
     }
 
     impl Client {
-        pub fn connect_to_server(){
-            todo!();
+        pub fn connect_to_server(addr:&str) -> std::io::Result<Client>{
+            match TcpStream::connect(addr){
+                Ok(stream)=>{
+                    Ok(Client {stream})
+                }Err(e)=>{
+                    Err(e)
+                }
+            }
         }
 
         pub fn send_action(){
@@ -17,3 +23,6 @@ pub mod client{
         }
     }
 }
+
+
+
