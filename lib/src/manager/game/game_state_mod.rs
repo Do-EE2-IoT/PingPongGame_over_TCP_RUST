@@ -9,19 +9,13 @@ pub mod game_state {
     }
 
     pub struct GameState {
-        player: Player,
         status: GameStatus,
         max_score: u32,
     }
 
     impl GameState {
-        fn new(id: u32, username: String, score: u32, max_score: u32) -> Self {
+        fn new(max_score: u32) -> Self {
             Self {
-                player: Player {
-                    id,
-                    username,
-                    score,
-                },
                 status: GameStatus::Begin,
                 max_score,
             }
