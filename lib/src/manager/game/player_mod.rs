@@ -7,15 +7,7 @@ pub mod player {
     }
 
     impl Player {
-        pub fn new(id: u32, username: String, score: u32) -> Self {
-            Self {
-                id,
-                username,
-                score,
-            }
-        }
-
-        fn increase_score(&mut self) {
+        pub fn increase_score(&mut self) {
             self.score += 1
         }
     }
